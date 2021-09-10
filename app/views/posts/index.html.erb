@@ -1,0 +1,27 @@
+<h1 style="font-family: 'JetBrains Mono Medium',ui-sans-serif">COEUS-TWEETZ</h1>
+
+<%= link_to "New Tweet ", new_post_path %>
+<%#= render 'form', locals: { post: Post.new } %>
+
+<% @post.each do |post| %>
+  <div>
+
+    <ul>
+      <li><%= link_to 'View', post %></li>
+      <li><%= link_to 'Edit', edit_post_path(post) %></li>
+      <li><%= link_to 'Delete', post, method: :delete %></li>
+    </ul>
+
+    <div>
+      <%= post.tweet %>
+    </div>
+
+    <div>
+      <span>Like</span>
+      <%= post.likes %>
+      <span>Comment</span>
+      <%= post.comments %>
+    </div>
+
+  </div>
+<% end %>
