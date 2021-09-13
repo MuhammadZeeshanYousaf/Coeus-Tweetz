@@ -1,4 +1,5 @@
 <%= form_with(model: post) do |form| %>
+
   <% if post.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
       <h6><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h6>
@@ -11,12 +12,13 @@
     </div>
   <% end %>
 
-
-  <div class="form-floating field">
-    <%= form.text_area :body, class: "form-control", placeholder: "Tweet"%>
+  <div class="form-outline">
+    <%= form.text_area :body, class: "form-control", placeholder: "Tweet...", rows: 4%>
   </div>
+
   <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-secondary"%>
   </div>
+
 <% end %>

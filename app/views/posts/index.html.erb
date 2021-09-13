@@ -1,9 +1,10 @@
-<!--<p id="notice" class="alert alert-success"><%#= notice %></p>-->
-<p id="notice"><%= notice %></p>
+<% unless notice.nil? %>
+  <p id="notice" class="alert alert-success"><%= notice %></p>
+<% end %>
 
 <!--<input type="text" class="col-xs-1 form-control rounded-pill" placeholder="Tweet..." style="width: 50%; margin: auto">-->
 <!--<br>-->
-<div class="d-grid gap-2 col-3 mx-auto"><%= link_to 'Create Tweet', new_post_path, class: "btn btn-warning btn-md btn-block", id: "button-addon2"%></div>
+<div class="d-grid gap-2 col-3 mx-auto"><%= link_to 'Create Tweet', new_post_path, class: "btn btn-warning btn-md btn-block mt-3", id: "button-addon2"%></div>
 
 <hr><br>
     <% @posts.each do |post| %>
@@ -28,8 +29,6 @@
         <div class="card-footer">
           <small class="text-muted">Created at: <%= post.created_at.strftime("%d-%m-%Y %H:%M:%S") %></small>
         </div>
-      </div>
-
       </div>
     <% end %>
 
