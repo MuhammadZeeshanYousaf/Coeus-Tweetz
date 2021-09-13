@@ -1,3 +1,19 @@
-<h1>User Name</h1>
+<% unless notice.nil? %>
+  <p id="notice" class="alert alert-success"><%= notice %></p>
+<% end %>
 
-<div><%= @post.tweet %></div>
+<br>
+
+<div class="border border-warning rounded-3" style="width: 80%; margin:auto; padding: 23px">
+  <h5>Tweet Body</h5>
+  <hr>
+  <div class="card-body">
+    <p class="card-text"><%= @post.body %></p>
+
+    <div class="card-footer">
+      <small class="text-muted">Created at: <%= @post.created_at.strftime("%d-%m-%Y %H:%M:%S") %></small>
+    </div>
+  </div>
+  <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-outline-warning" %>
+  <%= link_to 'Back', posts_path, class: "btn btn-warning" %>
+</div>

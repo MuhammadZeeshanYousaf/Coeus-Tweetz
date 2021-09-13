@@ -1,3 +1,9 @@
-<h2>Create new Tweet:</h2>
-
-<%= render "form", post: @post %>
+<br>
+<div class="border border-warning rounded-3" style="width: 80%; margin:auto; padding: 23px">
+  <h3>New Tweet</h3>
+  <hr>
+  <%= render 'form', post: @post %>
+  <br>
+  <%= link_to 'Back', posts_path, class:"btn btn-warning" %>
+</div>
+<br><br><br><br><br>

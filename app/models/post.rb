@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-  validates :tweet, presence: true
+  validates :body, presence: true
 end
