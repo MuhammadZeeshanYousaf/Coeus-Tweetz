@@ -1,0 +1,24 @@
+<%= form_with(model: post) do |form| %>
+
+  <% if post.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h6><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h6>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-outline">
+    <%= form.text_area :body, class: "form-control", placeholder: "Tweet...", rows: 4%>
+  </div>
+
+  <br>
+  <div class="actions">
+    <%= form.submit class: "btn btn-secondary"%>
+  </div>
+
+<% end %>
