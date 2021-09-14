@@ -21,6 +21,7 @@ class User < ApplicationRecord
   # returns an array of other users who the user has followed
   has_many :followings, through: :given_follows, source: :followed_user
 
-  # validates :username, presence: true, length: {minimum: 5, maximum: 20}
+  validates :username, presence: true, length: {minimum: 5, maximum: 20}
+  validates_uniqueness_of :username
 
 end
