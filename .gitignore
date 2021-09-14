@@ -50,6 +50,7 @@ yarn-debug.log*
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/workspace.xml
 
 # AWS User-specific
 .idea/**/aws.xml
@@ -65,6 +66,8 @@ yarn-debug.log*
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+.idea/dataSources.xml
+.idea/inspectionProfiles/Project_Default.xml
 
 # Gradle
 .idea/**/gradle.xml
