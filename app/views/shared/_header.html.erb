@@ -9,9 +9,10 @@
         <li><%= link_to "Home", root_path, class: "nav-link px-2 text-white" %></li>
         <% if user_signed_in? %>
           <li><%= link_to "Edit profile", edit_user_registration_path, class: 'nav-link px-2 text-white' %></li>
+          <li><%= link_to "My tweets", root_path, class: "nav-link px-2 text-white" %></li>
+          <li><%= link_to "Profile", show_user_path(current_user.username), class: "nav-link px-2 text-white" %></li>
         <% end %>
-        <li><%= link_to "My tweets", root_path, class: "nav-link px-2 text-white" %></li>
-        <li><%= link_to "Profile", show_user_path(current_user.username), class: "nav-link px-2 text-white" %></li>
+
       </ul>
 
 <!--      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">-->
@@ -20,7 +21,7 @@
 
       <div class="text-end">
         <% if user_signed_in? %>
-          <%= link_to current_user.email, show_user_path(current_user.username), class: "btn btn-warning rounded-pill" %>
+          <%= link_to current_user.username, show_user_path(current_user.username), class: "btn btn-warning rounded-pill" %>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-outline-warning' %>
         <% else %>
           <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-outline-light me-2' %>
