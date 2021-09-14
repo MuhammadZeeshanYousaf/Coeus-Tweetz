@@ -1,12 +1,17 @@
-<% unless notice.nil? %>
-  <p id="notice" class="alert alert-success"><%= notice %></p>
-<% end %>
+<%# if notice %>
+<!--  <p id="notice" class="alert alert-success"><%#= notice %></p>-->
+<%# end %>
+<!--Above lines added in application layout and don't need to add anymore -->
 
 <!--<input type="text" class="col-xs-1 form-control rounded-pill" placeholder="Tweet..." style="width: 50%; margin: auto">-->
 <!--<br>-->
 <div class="d-grid gap-2 col-3 mx-auto"><%= link_to 'Create Tweet', new_post_path, class: "btn btn-warning btn-md btn-block mt-3", id: "button-addon2"%></div>
 
 <hr><br>
+    <% if @posts.nil? %>
+      <p class="text-center text-secondary">There is no tweet yet!</p>
+    <% end %>
+
     <% @posts.each do |post| %>
       <div class="card shadow p-3 mb-5 bg-white rounded size-md">
 
@@ -21,14 +26,18 @@
               <li><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "dropdown-item" %></li>
             </ul>
           </div>
-          <h5 class="card-title">Zeeshan Yousaf</h5>
-          <p class="card-subtitle mb-2 text-muted">@zeeshan430</p>
+          <h5 class="card-title"><%= current_user.name %></h5>
+          <p class="card-subtitle mb-2 text-muted">@<%= current_user.username %></p>
           <hr>
-          <div class="card-text"><%= post.body %></div>
+          <div class="border-bottom-0 border-warning card-text"><%= post.body %></div>
         </div>
         <div class="card-footer">
           <small class="text-muted">Created at: <%= post.created_at.strftime("%d-%m-%Y %H:%M:%S") %></small>
+          <hr>
+          <%= link_to 'Like', root_path,class: "btn btn-secondary rounded-pill" %>
+          <%= link_to 'Comment', root_path,class: "btn btn-secondary rounded-pill" %>
         </div>
+
       </div>
     <% end %>
 

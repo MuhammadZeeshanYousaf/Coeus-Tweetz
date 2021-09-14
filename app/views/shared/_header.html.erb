@@ -1,14 +1,16 @@
 <header class="p-3 bg-dark text-white">
-  <div class="container">
+  <div>
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
         <h4 class="bi me-2" style="color: #ffc107">COEUS-TWEETZ</h4>
       </a>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Profile</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        <li><%= link_to "Home", root_path, class: "nav-link px-2 text-white" %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Edit profile", edit_user_registration_path, class: 'nav-link px-2 text-white' %></li>
+        <% end %>
+        <li><%= link_to "My tweets", root_path,class: "nav-link px-2 text-white" %></li>
       </ul>
 
 <!--      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">-->
@@ -16,9 +18,17 @@
 <!--      </form>-->
 
       <div class="text-end">
-        <button type="button" class="btn btn-outline-light me-2">Login</button>
-        <button type="button" class="btn btn-warning">Sign-up</button>
+        <% if user_signed_in? %>
+          <%= link_to current_user.email, edit_user_registration_path, class: "btn btn-warning rounded-pill" %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-outline-warning' %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-outline-light me-2' %>
+          <%= link_to "Sign in", new_user_session_path, class: 'btn btn-warning' %>
+        <% end %>
+
+
       </div>
+
     </div>
   </div>
 </header>
