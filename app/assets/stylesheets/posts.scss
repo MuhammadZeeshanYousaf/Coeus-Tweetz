@@ -1,6 +1,9 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+html, body {
+  min-height: 100%;
+}
 
 .size-md{
   width: 80%;
@@ -9,4 +12,10 @@
 
 #post-menu{
   float: right;
+}
+
+.center{
+  width: 35%;
+  padding: 20px;
+  margin: 30px auto;
 }
