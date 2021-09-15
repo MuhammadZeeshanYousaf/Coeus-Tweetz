@@ -1,0 +1,8 @@
+<br>
+<%= form_with model: [ @post, @post.comments.build ], class: 'input-group row' do |form| %>
+
+    <%= form.text_field :body, class: "form-control rounded-pill col shadow-sm", placeholder: "Comment...", autocomplete: 'off' %>
+  <br>
+    <%= form.submit "Comment", class: "input-group-btn btn btn-warning rounded-pill col-lg-2 col-md-12"%>
+
+<% end %>
