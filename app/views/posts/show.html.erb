@@ -12,7 +12,7 @@
   </div>
   <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-outline-warning" %>
   <%= link_to 'Back', posts_path, class: "btn btn-warning" %>
-  <%= render 'comments/comment', { user: current_user, post: @post } %> <br>
+  <%= render 'comments/comment', { user: current_user, post: @post } %>
   <%= render 'comments/form' %>
 </div>
 <br><br><br><br>
