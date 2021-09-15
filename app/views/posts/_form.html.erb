@@ -2,7 +2,6 @@
 
   <% if post.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
-<!--      <h6><%#= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h6>-->
       <h6><%= pluralize(post.errors.count, "error") %> occurred!</h6>
       <ul>
         <% post.errors.each do |error| %>
