@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :posts, dependent: :delete_all
+  has_many :posts, dependent: :destroy
 
   # Will return an array of follows for the given user instance
   has_many :received_follows, foreign_key: :followed_user_id, class_name: "Follow"
@@ -20,6 +20,8 @@ class User < ApplicationRecord
 
   # returns an array of other users who the user has followed
   has_many :followings, through: :given_follows, source: :followed_user
+
+  has_many :comments, dependent: :destroy
 
   validates :username, presence: true, length: {minimum: 5, maximum: 20}
   validates_uniqueness_of :username

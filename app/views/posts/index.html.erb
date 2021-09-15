@@ -34,8 +34,8 @@
         <div class="card-footer">
           <small class="text-muted">Created at: <%= post.created_at.strftime("%d-%m-%Y %H:%M:%S") %></small>
           <hr>
-          <%= link_to 'Like', root_path,class: "btn btn-secondary rounded-pill" %>
-          <%= link_to 'Comment', root_path,class: "btn btn-secondary rounded-pill" %>
+          <%= link_to 'Like', root_path, class: "btn btn-secondary rounded-pill" %>
+          <%= link_to 'Comment', post, class: "btn btn-secondary rounded-pill" %>
         </div>
 
       </div>
