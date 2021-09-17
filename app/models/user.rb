@@ -26,4 +26,5 @@ class User < ApplicationRecord
   validates :username, presence: true, length: {minimum: 5, maximum: 20}
   validates_uniqueness_of :username
 
+
 end

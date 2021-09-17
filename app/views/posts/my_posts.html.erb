@@ -1,0 +1,13 @@
+
+<div class="container bg-light">
+  <br>
+  <%= render 'form', post: Post.new %>
+</div>
+<hr>
+
+<% if @posts.nil? %>
+  <p class="text-center text-secondary">There is no tweet yet!</p>
+<% end %>
+
+<h3 class="text-center text-secondary text-decoration-underline">My Tweets</h3>
+<%= render @posts %>

@@ -1,0 +1,11 @@
+var followedUserBtnElement = document.getElementById("follow_btn_<%= escape_javascript @followed_user %>")
+
+if (followedUserBtnElement.innerHTML == "Follow") {
+    followedUserBtnElement.innerHTML = "Unfollow";
+    followedUserBtnElement.classList.remove('btn-primary');
+    followedUserBtnElement.classList.add('btn-outline-primary');
+} else {
+    followedUserBtnElement.innerHTML = "Follow"
+    followedUserBtnElement.classList.remove('btn-outline-primary');
+    followedUserBtnElement.classList.add('btn-primary');
+}

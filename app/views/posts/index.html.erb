@@ -1,7 +1,6 @@
-<!--<input type="text" class="col-xs-1 form-control rounded-pill" placeholder="Tweet..." style="width: 50%; margin: auto">-->
-<!--<br>-->
 
-<div class="container col-lg-3 p-2 mb-5 mt-2">
+
+<div class="container col-lg-3 p-2 mt-2">
   <%= link_to 'Create Tweet', new_post_path, class: "btn btn-warning w-100" %>
 </div>
 
@@ -9,7 +8,6 @@
   <p class="text-center text-secondary">There is no tweet yet!</p>
 <% end %>
 
+<h3 class="text-center text-secondary text-decoration-underline">All Tweets</h3>
 <%= render @posts %>
-
-<br>
 

@@ -1,0 +1,33 @@
+<% if @users.empty? %>
+  <br> <h5 class="text-secondary text-center">All users added as Friend</h5> <br>
+<% end %>
+
+<% @users.each do |user| %>
+<div class="container mt-3 mb-4">
+
+  <div class="card border-0">
+    <div class="card-header fw-bold">
+      <%= user.name %>
+      <small class="card-body text-secondary">@<%= user.username %></small>
+      <%= link_to "Follow", user_follow_path(user.id), class: 'btn btn-primary float-end follow-btn', id: "follow_btn_#{user.id}", remote: true %>
+    </div>
+
+    <table class="table text-black-50">
+      <tbody>
+        <tr>
+          <th scope="row">Followers:</th>
+          <td><%= user.followers.count %></td>
+        </tr>
+        <tr>
+          <th scope="row">Followings:</th>
+          <td><%= user.followings.count %></td>
+        </tr>
+        <tr>
+          <th scope="row">Tweets:</th>
+          <td><%= user.posts.count %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<% end %>
