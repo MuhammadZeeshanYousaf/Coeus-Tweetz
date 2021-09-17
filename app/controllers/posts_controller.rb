@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.where(user_id: current_user).order(created_at: "DESC")
+    @posts = Post.where(user_id: current_user.followings.ids << current_user.id).order(created_at: "DESC")
   end
 
   # GET /posts/1 or /posts/1.json
@@ -55,6 +55,10 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def my_posts
+    @posts = Post.where(user_id: current_user.id).order(created_at: "DESC")
   end
 
   private

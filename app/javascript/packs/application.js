@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import './posts'
+import './users'
 
 //= require turbolinks
 //= require jquery3

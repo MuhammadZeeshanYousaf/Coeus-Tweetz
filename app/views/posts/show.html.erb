@@ -1,6 +1,4 @@
-<br>
-
-<div class="border border-warning rounded-3 col-lg-10" style="margin:auto; padding: 23px">
+<div class="border border-warning rounded-3 col-lg-10 mt-4 mb-5" style="margin:auto; padding: 23px">
   <h5>Tweet Body</h5>
   <hr>
   <div class="card-body">
@@ -10,9 +8,10 @@
       <small class="text-muted">Created at: <%= @post.created_at.strftime("%d-%m-%Y %H:%M:%S") %></small>
     </div>
   </div>
-  <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-outline-warning" %>
+  <% if current_user.id.eql?(@post.user.id) %>
+    <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-outline-warning" %>
+  <% end %>
   <%= link_to 'Back', posts_path, class: "btn btn-warning" %>
   <%= render 'comments/comment', { user: current_user, post: @post } %>
   <%= render 'comments/form' %>
 </div>
-<br><br><br><br>

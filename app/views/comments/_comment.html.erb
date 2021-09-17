@@ -1,6 +1,7 @@
 <hr>
 <h2 class="text-secondary text-center">Comments</h2>
 <div class="container overflow-auto" style="max-height: 600px">
+
   <% if post.comments.empty? %>
     <p class="text-center text-secondary">There is no comment yet!</p>
   <% end %>
@@ -8,11 +9,12 @@
   <% post.comments.each do  |comment| %>
     <div class="card col-lg-11 m-auto">
         <div class="card-header">
-          <b><%= user.name %></b>
-          <small class="text-secondary">@<%= user.username %></small>
+          <b><%= comment.user.name %></b>
+          <small class="text-secondary">@<%= comment.user.username %></small>
         </div>
         <div class="card-text p-2"><%= comment.body %></div>
     </div>
     <br>
   <% end %>
+
 </div>
