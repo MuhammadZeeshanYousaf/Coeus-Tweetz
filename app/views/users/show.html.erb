@@ -11,11 +11,11 @@
       <table class="table table-light">
         <tbody>
           <tr>
-            <th scope="row">Followings:</th>
+            <th scope="row"><%= link_to "Followings:", followings_path %></th>
             <td><%= current_user.followings.count %></td>
           </tr>
           <tr>
-            <th scope="row">Followers:</th>
+            <th scope="row"><%= link_to "Followers:", followers_path %></th>
             <td><%= current_user.followers.count %></td>
           </tr>
           <tr>

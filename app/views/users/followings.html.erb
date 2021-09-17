@@ -1,0 +1,6 @@
+<% if @users.empty? %>
+  <h5 class="text-secondary text-center mt-5 mb-5">You don't have any following</h5>
+<% else %>
+  <h3 class="text-center text-secondary text-decoration-underline mt-4 mb-4">Followings</h3>
+  <%= render @users %>
+<% end %>

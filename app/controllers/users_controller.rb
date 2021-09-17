@@ -12,11 +12,19 @@ class UsersController < ApplicationController
     following = Follow.find_by(follower_id: follower_user_id, followed_user_id: followed_user_id)
 
     if following
-      following.delete
+      following.destroy
     else
       Follow.create(follower_id: follower_user_id, followed_user_id: followed_user_id)
     end
     @followed_user = followed_user_id   # to access in follow.js.erb
+  end
+
+  def followings
+    @users = current_user.followings
+  end
+
+  def followers
+    @users = current_user.followers
   end
 
   private
