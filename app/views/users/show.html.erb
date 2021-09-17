@@ -1,33 +1,45 @@
-<!--<div class="col-lg-7 col-md-8 col-sm-10 shadow-sm card rounded p-4" style=" float: none; margin: 50px auto;">-->
+<div class="col-lg-10 col-md-10 col-sm-10 p-sm-0 p-lg-5 shadow-sm card" style=" float: none; margin: 50px auto;">
 
-<div class="col-lg-10 col-md-10 col-sm-10 shadow-sm p-5 card" style=" float: none; margin: 50px auto;">
   <h1 class="card-header">
     <%= current_user.name %>
   </h1>
+
   <div class="card-body">
     <h5 class="card-title text-secondary">@<%= current_user.username %></h5> <br>
-    <table class="table">
-      <tbody>
-      <tr>
-        <th scope="row">Email:</th>
-        <td><%= current_user.email %></td>
-      </tr>
-      <tr>
-        <th scope="row">Total tweets:</th>
-        <td><%= current_user.posts.count %></td>
-      </tr>
-      <tr>
-        <th scope="row">Account created at:</th>
-        <td><%= current_user.created_at.strftime("%d-%m-%Y") %></td>
-      </tr>
-      <tr>
-        <th scope="row">Last updated at:</th>
-        <td><%= current_user.updated_at.strftime("%d-%m-%Y") %></td>
-      </tr>
-      </tbody>
-    </table>
 
+    <div class="table-responsive">
+      <table class="table table-light">
+        <tbody>
+          <tr>
+            <th scope="row"><%= link_to "Followings:", followings_path %></th>
+            <td><%= current_user.followings.count %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= link_to "Followers:", followers_path %></th>
+            <td><%= current_user.followers.count %></td>
+          </tr>
+          <tr>
+            <th scope="row">Total tweets:</th>
+            <td><%= current_user.posts.count %></td>
+          </tr>
+          <tr>
+            <th scope="row">Email:</th>
+            <td><%= current_user.email %></td>
+          </tr>
+          <tr>
+            <th scope="row">Account created at:</th>
+            <td><%= current_user.created_at.strftime("%d-%m-%Y") %></td>
+          </tr>
+          <tr>
+            <th scope="row">Last updated at:</th>
+            <td><%= current_user.updated_at.strftime("%d-%m-%Y") %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <br>
+
     <%= link_to "Edit profile", edit_user_registration_path, class: 'btn btn-warning' %>
   </div>
+
 </div>
