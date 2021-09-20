@@ -23,5 +23,5 @@ This project is created in the following version:
 
 Note: You may need these versions to run this project.
 
-You may find more infromation about dependencies here:
+You may find more information about dependencies here:
 https://guides.rubyonrails.org/development_dependencies_install.html
