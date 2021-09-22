@@ -1,0 +1,7 @@
+<%= @greeting %>, You have a new Follower. <br>
+  <h6><%= @follower_user.name %> is now Following you.</h6>
+  Now your Followers are <b><%= @followed_user.followers.count %></b>
+
+
+<%= @follower_user.name %> is now Following you.
+Now your Followers are <%= @followed_user.followers.count %>
