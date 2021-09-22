@@ -1,0 +1,17 @@
+> User Follow Activity Email Text <
+
+<%= @greeting %>,<%= @follower_user.name %>!
+
+You have a new Follower:
+<%= @follower_user.name %>
+@<%= @follower_user.username %>
+
+Now you have <%= @followed_user.followers.count %> followers.
+
+__________________________
+
+Help | Privacy
+We sent this email to @<%= @followed_user.username %>.
+Coeus Solutions GmbH,
+10969 Berlin
+info@coeus-solutions.de

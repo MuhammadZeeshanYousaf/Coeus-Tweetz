@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       following.destroy
     else
       Follow.create(follower_id: follower_user_id, followed_user_id: followed_user_id)
+      UserMailer.with(follower_user: current_user, followed_user: User.find(followed_user_id)).follow_email.deliver_later
     end
     @followed_user = followed_user_id   # to access in follow.js.erb
   end
