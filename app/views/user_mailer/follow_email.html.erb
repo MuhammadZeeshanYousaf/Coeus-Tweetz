@@ -1,6 +1,6 @@
 <div class="container">
   <div class="border border-warning rounded-3 p-4">
-    <h1 class="text-warning text-center"><%= image_tag attachments['twitter.png'].url, size: 37%> COEUS-TWEETZ</h1>
+    <h1 class="text-warning text-center"><%= image_tag attachments['twitter.png'].url, size: 37, alt: 'logo'%> COEUS-TWEETZ</h1>
     <h2 class="text-warning">
       <%= @greeting %>, <%= @followed_user.name %> <br>
     </h2>
@@ -11,13 +11,13 @@
     <p>Now you have <b><%= @followed_user.followers.count %></b> Follower(s)</p>
     <hr>
 
-    <h5 class="text-center text-decoration-underline">Follower Information</h5>
+    <h4 class="text-center text-decoration-underline">Follower Information</h4>
     <div class="container col-lg-10 col-sm-11">
 
       <div class="card border-0">
         <div class="card-header fw-bold">
-          <%= @followed_user.name %>
-          <small class="card-body text-secondary">@<%= @followed_user.username %></small>
+          <%= @follower_user.name %>
+          <small class="card-body text-secondary">@<%= @follower_user.username %></small>
         </div>
 
         <table class="table text-black-50">
@@ -28,11 +28,11 @@
           </tr>
           <tr>
             <th scope="row">Followings:</th>
-            <td><%= @followed_user.followings.count %></td>
+            <td><%= @follower_user.followings.count %></td>
           </tr>
           <tr>
             <th scope="row">Tweets:</th>
-            <td><%= @followed_user.posts.count %></td>
+            <td><%= @follower_user.posts.count %></td>
           </tr>
           </tbody>
         </table>
@@ -42,7 +42,7 @@
 
     <div class="text-center text-secondary mt-5">
       <button class="btn btn-warning rounded-pill mb-5">See more on Coeus-Tweetz</button>
-      <br><br>
+      <br><br><br>
       <pre>
       <strong>Help | Privacy | Reset Password</strong>
       We sent this email to @<%= @followed_user.username %>.
@@ -50,7 +50,8 @@
       c/o eKomi Ltd,
       Zimmerstraße 11
       10969 Berlin
-      <a href="mailto:info@coeus-solutions.de">info@coeus-solutions.de</a>
+      <a href="mailto:info@coeus-solutions.de">info@coeus-solutions.de</a><br>
+      © 2021 Copyright: <a class="text-warning" href="https://github.com/MuhammadZeeshanYousaf">Zeeshan Developer</a>
       </pre>
     </div>
   </div>
