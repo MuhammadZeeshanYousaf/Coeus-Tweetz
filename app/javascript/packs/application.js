@@ -16,7 +16,11 @@ import './users'
 //= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
+require("trix")
+require("@rails/actiontext")
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+require("trix")
+require("@rails/actiontext")

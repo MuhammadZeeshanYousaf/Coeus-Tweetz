@@ -16,4 +16,5 @@ Rails.application.routes.draw do
     get "/follow", to: "users#follow", as: :follow
   end
 
+  resources :articles
 end
