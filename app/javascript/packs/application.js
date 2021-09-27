@@ -16,6 +16,7 @@ import './users'
 //= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
+//= require_tree .
 
 Rails.start()
 Turbolinks.start()
