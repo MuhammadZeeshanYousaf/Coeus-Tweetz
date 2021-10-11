@@ -3,7 +3,7 @@
   <hr>
   <div class="card-body">
     <p class="card-text"><%= @post.body %></p>
-
+    <%= image_tag @post.post_image.url, class: "img-fluid col-lg-8 auto mt-2 rounded" if @post.post_image %>
     <div class="card-footer">
       <small class="text-muted">Created at: <%= @post.created_at.strftime("%d-%m-%Y %H:%M:%S") %></small>
     </div>

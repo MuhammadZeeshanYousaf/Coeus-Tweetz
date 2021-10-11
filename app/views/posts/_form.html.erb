@@ -12,7 +12,12 @@
   <% end %>
 
   <div class="form-outline">
-    <%= form.text_area :body, class: "form-control", placeholder: "Tweet...", rows: 4 %>
+    <%= form.text_area :body, class: "form-control", placeholder: "Tweet...", rows: 4 %> <br>
+  </div>
+
+  <div class="form-outline">
+    <%= form.label :post_image %>
+    <%= form.file_field :post_image %>
   </div>
 
   <br>
