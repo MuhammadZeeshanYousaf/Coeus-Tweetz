@@ -1,9 +1,9 @@
 # COEUS-TWEETZ (Ruby on Rails)
 
-This README decument is included whatever steps are necessary to get the
+This README document is included whatever steps are necessary to get the
 application up and running.
 
-This project is created in the following version:
+This project is developed in following version:
 
 * Ruby version:
   ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux]
