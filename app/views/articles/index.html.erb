@@ -1,0 +1,7 @@
+<% if notice %>
+  <div class="alert alert-success"><%= notice %></div>
+<% end %>
+
+<div class="container"><%= link_to 'New Article', new_article_path, class: 'btn btn-warning mt-3 mb-3' %></div>
+<hr>
+<%= render @articles %>
