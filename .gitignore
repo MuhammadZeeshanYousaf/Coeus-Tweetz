@@ -31,7 +31,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-
+public/uploads*
 /public/packs
 /public/packs-test
 /node_modules
@@ -68,7 +68,8 @@ yarn-debug.log*
 .idea/**/dbnavigator.xml
 .idea/dataSources.xml
 .idea/inspectionProfiles/Project_Default.xml
-
+.idea/Coeus-Tweetz.iml
+.idea/workspace.xml
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
