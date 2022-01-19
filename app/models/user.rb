@@ -23,6 +23,8 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
+  has_many :articles, dependent: :destroy
+
   validates :username, presence: true, length: {minimum: 5, maximum: 20}
   validates_uniqueness_of :username
 
